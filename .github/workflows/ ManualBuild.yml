@@ -55,14 +55,13 @@ jobs:
           mkdir artifacts
           cp tv/build/outputs/apk/release/*.apk artifacts/
 
-      - name: Upload Release
-        uses: ncipollo/release-action@v1
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.6.0
         with:
-          tag: ${{ steps.version.outputs.tag }}
-          name: v${{ steps.version.outputs.version }}
-          token: ${{ secrets.GIT_TOKEN }}
-          omitBodyDuringUpdate: true
-          omitNameDuringUpdate: true
-          omitPrereleaseDuringUpdate: true
-          allowUpdates: true
-          artifacts: artifacts/*
+          # Artifact name
+          name: ${{ steps.version.outputs.version }}
+          # A file, directory or wildcard pattern that describes what to upload
+          path: artifacts/*
+          # The desired behavior if no files are found using the provided path.
+
+          
