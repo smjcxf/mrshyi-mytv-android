@@ -1,9 +1,6 @@
-name: Auto Build on Push
+name: Manual Build
 
 on:
-  push:
-    branches:
-      - dev
   workflow_dispatch:
 
 jobs:
@@ -61,6 +58,7 @@ jobs:
       - name: Upload Release
         uses: ncipollo/release-action@v1
         with:
+          tag: ${{ steps.version.outputs.tag }}
           name: v${{ steps.version.outputs.version }}
           token: ${{ secrets.GIT_TOKEN }}
           omitBodyDuringUpdate: true
