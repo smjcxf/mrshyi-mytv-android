@@ -27,7 +27,6 @@ include(":core:data")
 include(":core:util")
 include(":core:designsystem")
 include(":tv")
-include(":mobile")
 include(":ijkplayer-java")
 include(":allinone")
 
