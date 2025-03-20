@@ -615,11 +615,6 @@ object Configs {
         get() = SP.getString(KEY.CLOUD_SYNC_WEBDAV_PASSWORD.name, "")
         set(value) = SP.putString(KEY.CLOUD_SYNC_WEBDAV_PASSWORD.name, value)
 
-    /** 肥羊 AllInOne 文件路径 */
-    var feiyangAllInOneFilePath: String
-        get() = SP.getString(KEY.FEIYANG_ALLINONE_FILE_PATH.name, "")
-        set(value) = SP.putString(KEY.FEIYANG_ALLINONE_FILE_PATH.name, value)
-
     enum class UiTimeShowMode(val value: Int, val label: String) {
         /** 隐藏 */
         HIDDEN(0, "隐藏"),
@@ -752,7 +747,6 @@ object Configs {
             cloudSyncWebDavUrl = cloudSyncWebDavUrl,
             cloudSyncWebDavUsername = cloudSyncWebDavUsername,
             cloudSyncWebDavPassword = cloudSyncWebDavPassword,
-            feiyangAllInOneFilePath = feiyangAllInOneFilePath,
         )
     }
 
@@ -823,7 +817,6 @@ object Configs {
         configs.cloudSyncWebDavUrl?.let { cloudSyncWebDavUrl = it }
         configs.cloudSyncWebDavUsername?.let { cloudSyncWebDavUsername = it }
         configs.cloudSyncWebDavPassword?.let { cloudSyncWebDavPassword = it }
-        configs.feiyangAllInOneFilePath?.let { feiyangAllInOneFilePath = it }
     }
 
     @Serializable
